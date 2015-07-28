@@ -1,4 +1,7 @@
-﻿
+﻿Set-StrictMode -version latest
+
+
+
 <#
 
 Based on: 
@@ -110,3 +113,16 @@ Pop-Location
 
 
 #endregion
+
+
+#start-Process powershell -Verb runAs
+<#
+FSUTIL.EXE file createnew L:\testfile.dat (40GB) 
+FSUTIL.EXE file setvaliddata L:\testfile.dat (40GB)
+
+FSUTIL.EXE file createnew S:\testfile.dat (40GB) 
+FSUTIL.EXE file setvaliddata S:\testfile.dat (40GB)
+
+FSUTIL.EXE file createnew T:\testfile.dat (40GB) 
+FSUTIL.EXE file setvaliddata T:\testfile.dat (40GB)
+#>
